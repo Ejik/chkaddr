@@ -1,0 +1,283 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D277613-573E-4D7B-A7DE-A470B98505A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACOT.ChkAddrModule</RootNamespace>
+    <AssemblyName>ChkAddrModule</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.ADODB, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Interop.ADODB.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.ADOX, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Interop.ADOX.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.JRO, Version=2.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Interop.JRO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Microsoft.Practices.CompositeUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\ACOT\Lib\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CommandNames.cs" />
+    <Compile Include="Constants\EventTopicNames.cs" />
+    <Compile Include="Constants\UIExtensionSiteNames.cs" />
+    <Compile Include="Constants\WorkspaceNames.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CheckAddressService.cs" />
+    <Compile Include="Services\mdbService.cs" />
+    <Compile Include="Services\PageFlowNavigationController.cs" />
+    <Compile Include="Views\AddrElementsSelectionView\AddrElementsSelectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddrElementsSelectionView\AddrElementsSelectionView.designer.cs">
+      <DependentUpon>AddrElementsSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddrElementsSelectionView\AddrElementsSelectionView.GeneratedCode.cs">
+      <DependentUpon>AddrElementsSelectionView.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddrElementsSelectionView\AddrElementsSelectionViewPresenter.cs" />
+    <Compile Include="Views\AddrElementsSelectionView\AddrElementsSelectionViewPresenter.GeneratedCode.cs">
+      <DependentUpon>AddrElementsSelectionViewPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddrElementsSelectionView\IAddrElementsSelectionView.cs" />
+    <Compile Include="Views\BackGroundView\GlassBackgroundViewPresenter.cs" />
+    <Compile Include="Views\BackGroundView\LayoutViewPresenter.GeneratedCode.cs">
+      <DependentUpon>GlassBackgroundViewPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditorView\IEditorView.cs" />
+    <Compile Include="Views\EditorView\LayoutView.GeneratedCode.cs">
+      <DependentUpon>EditorView.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EditorView\LayoutViewPresenter.GeneratedCode.cs">
+      <DependentUpon>EditorViewPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditorView\EditorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EditorView\EditorView.Designer.cs">
+      <DependentUpon>EditorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditorView\EditorViewPresenter.cs" />
+    <Compile Include="Views\BackGroundView\Copy of LayoutView.GeneratedCode.cs">
+      <DependentUpon>GlassBackgroundView.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BackGroundView\GlassBackgroundView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BackGroundView\GlassBackgroundView.Designer.cs">
+      <DependentUpon>GlassBackgroundView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexerView\Copy of LayoutView.GeneratedCode.cs">
+      <DependentUpon>IndexerView.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IndexerView\IIndexerView.cs" />
+    <Compile Include="Views\IndexerView\IndexerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IndexerView\IndexerView.Designer.cs">
+      <DependentUpon>IndexerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexerView\IndexerViewPresenter.cs" />
+    <Compile Include="Views\IndexerView\LayoutViewPresenter.GeneratedCode.cs">
+      <DependentUpon>IndexerViewPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListView\ThreadState.cs" />
+    <Compile Include="Workitems\EditorViewController.cs" />
+    <Compile Include="Workitems\WorkersListViewController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="ModuleController.cs" />
+    <Compile Include="Services\CmdLineService.cs" />
+    <Compile Include="Views\ListView\IWorkersListView.cs" />
+    <Compile Include="Views\ListView\LayoutView.GeneratedCode.cs">
+      <DependentUpon>WorkersListView.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ListView\LayoutViewPresenter.GeneratedCode.cs">
+      <DependentUpon>WorkersListViewPresenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListView\WorkersListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ListView\WorkersListView.Designer.cs">
+      <DependentUpon>WorkersListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListView\WorkersListViewPresenter.cs" />
+    <Compile Include="Views\MainView\IMainLayoutView.cs" />
+    <Compile Include="Views\MainView\MainLayoutView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainView\MainLayoutView.Designer.cs">
+      <DependentUpon>MainLayoutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView\LayoutView.GeneratedCode.cs">
+      <DependentUpon>MainLayoutView.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainView\MainLayoutViewPresenter.cs" />
+    <Compile Include="Views\MainView\LayoutViewPresenter.GeneratedCode.cs">
+      <DependentUpon>MainLayoutViewPresenter.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\acotwin\Source\Infrastructure\Infrastructure.Interface\Infrastructure.Interface.csproj">
+      <Project>{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}</Project>
+      <Name>Infrastructure.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonDialogs\CommonDialogsModule.csproj">
+      <Project>{6F938469-87C0-48BF-86A7-04DBCFB32563}</Project>
+      <Name>CommonDialogsModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChkAddrModule.Interface\ChkAddrModule.Interface.csproj">
+      <Project>{08038017-0FB1-4DD2-90C7-C08FA936FC6A}</Project>
+      <Name>ChkAddrModule.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Services.csproj">
+      <Project>{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3}</Project>
+      <Name>Services</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddrElementsSelectionView\AddrElementsSelectionView.resx">
+      <DependentUpon>AddrElementsSelectionView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditorView\EditorView.resx">
+      <DependentUpon>EditorView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IndexerView\IndexerView.resx">
+      <DependentUpon>IndexerView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListView\WorkersListView.resx">
+      <DependentUpon>WorkersListView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BackGroundView\GlassBackgroundView.resx">
+      <DependentUpon>GlassBackgroundView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView\MainLayoutView.resx">
+      <DependentUpon>MainLayoutView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

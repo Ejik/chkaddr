@@ -1,0 +1,13 @@
+*.exe
+*.dll
+obj/
+.svn/
+*.suo
+*.pdb
+*.cache
+*~
+*.dbf
+bin/
+Setup/
+*.gpState
+

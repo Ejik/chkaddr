@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{DF75B98D-D9EE-49E4-8B24-148DDFC6A493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{82F41DC8-1CA4-4C67-81F9-C455B80815D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shell", "Source\Infrastructure\Shell\Shell.csproj", "{04AA9D8F-4269-482E-B877-BB0ADCD4FBC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BDF9EB1D-1458-4D7E-A5BE-5E311F434C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Source\Services\Services.csproj", "{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDialogsModule", "Source\CommonDialogs\CommonDialogsModule.csproj", "{6F938469-87C0-48BF-86A7-04DBCFB32563}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChkAddrModule", "Source\ChkAddrModule\ChkAddrModule\ChkAddrModule.csproj", "{3D277613-573E-4D7B-A7DE-A470B98505A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChkAddrModule.Interface", "Source\ChkAddrModule\ChkAddrModule.Interface\ChkAddrModule.Interface.csproj", "{08038017-0FB1-4DD2-90C7-C08FA936FC6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{6B8373B2-6D1E-4888-A6EB-3B7DB90E51C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChkAddrModule.Tests", "Source\ChkAddrModule\ChkAddrModule.Tests\ChkAddrModule.Tests.csproj", "{B3C3B34B-82DF-4A4F-B0A7-04EDA54772D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "caIndex", "Source\Infrastructure\caIndex\caIndex.csproj", "{15303739-B64A-4206-AB83-10BF581D648E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Interface", "..\acotwin\Source\Infrastructure\Infrastructure.Interface\Infrastructure.Interface.csproj", "{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Library", "..\acotwin\Source\Infrastructure\Infrastructure.Library\Infrastructure.Library.csproj", "{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04AA9D8F-4269-482E-B877-BB0ADCD4FBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AA9D8F-4269-482E-B877-BB0ADCD4FBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AA9D8F-4269-482E-B877-BB0ADCD4FBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AA9D8F-4269-482E-B877-BB0ADCD4FBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F938469-87C0-48BF-86A7-04DBCFB32563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F938469-87C0-48BF-86A7-04DBCFB32563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F938469-87C0-48BF-86A7-04DBCFB32563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F938469-87C0-48BF-86A7-04DBCFB32563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D277613-573E-4D7B-A7DE-A470B98505A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D277613-573E-4D7B-A7DE-A470B98505A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D277613-573E-4D7B-A7DE-A470B98505A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D277613-573E-4D7B-A7DE-A470B98505A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08038017-0FB1-4DD2-90C7-C08FA936FC6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08038017-0FB1-4DD2-90C7-C08FA936FC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08038017-0FB1-4DD2-90C7-C08FA936FC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08038017-0FB1-4DD2-90C7-C08FA936FC6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C3B34B-82DF-4A4F-B0A7-04EDA54772D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C3B34B-82DF-4A4F-B0A7-04EDA54772D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C3B34B-82DF-4A4F-B0A7-04EDA54772D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C3B34B-82DF-4A4F-B0A7-04EDA54772D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15303739-B64A-4206-AB83-10BF581D648E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15303739-B64A-4206-AB83-10BF581D648E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15303739-B64A-4206-AB83-10BF581D648E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15303739-B64A-4206-AB83-10BF581D648E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82F41DC8-1CA4-4C67-81F9-C455B80815D1} = {DF75B98D-D9EE-49E4-8B24-148DDFC6A493}
+		{BDF9EB1D-1458-4D7E-A5BE-5E311F434C4F} = {DF75B98D-D9EE-49E4-8B24-148DDFC6A493}
+		{6B8373B2-6D1E-4888-A6EB-3B7DB90E51C3} = {DF75B98D-D9EE-49E4-8B24-148DDFC6A493}
+		{04AA9D8F-4269-482E-B877-BB0ADCD4FBC1} = {82F41DC8-1CA4-4C67-81F9-C455B80815D1}
+		{15303739-B64A-4206-AB83-10BF581D648E} = {82F41DC8-1CA4-4C67-81F9-C455B80815D1}
+		{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD} = {82F41DC8-1CA4-4C67-81F9-C455B80815D1}
+		{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19} = {82F41DC8-1CA4-4C67-81F9-C455B80815D1}
+		{C3AE4BCC-4E7B-47DA-B077-5FA5736B87E3} = {BDF9EB1D-1458-4D7E-A5BE-5E311F434C4F}
+		{6F938469-87C0-48BF-86A7-04DBCFB32563} = {BDF9EB1D-1458-4D7E-A5BE-5E311F434C4F}
+		{3D277613-573E-4D7B-A7DE-A470B98505A0} = {BDF9EB1D-1458-4D7E-A5BE-5E311F434C4F}
+		{08038017-0FB1-4DD2-90C7-C08FA936FC6A} = {BDF9EB1D-1458-4D7E-A5BE-5E311F434C4F}
+		{B3C3B34B-82DF-4A4F-B0A7-04EDA54772D8} = {6B8373B2-6D1E-4888-A6EB-3B7DB90E51C3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RootNamespace = ACOT
+		ShellProjectGuid = 04aa9d8f-4269-482e-b877-bb0adcd4fbc1
+		CommonProjectGuid = c6edd235-1110-4f8c-83d7-8c73de2fe852
+	EndGlobalSection
+EndGlobal
