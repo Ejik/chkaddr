@@ -27,13 +27,13 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.CompositeUI.dll</HintPath>
+      <HintPath>..\..\..\bin\Microsoft.Practices.CompositeUI.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)\Lib\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+      <HintPath>..\..\..\bin\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -73,6 +73,14 @@
     <Compile Include="IndexerViewControllerFixture.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\acotwin\Source\Infrastructure\Infrastructure.Interface\Infrastructure.Interface.csproj">
+      <Project>{BEA6FE9C-0589-4C64-B7CD-30158EE29CFD}</Project>
+      <Name>Infrastructure.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\acotwin\Source\Infrastructure\Infrastructure.Library\Infrastructure.Library.csproj">
+      <Project>{F1288EF5-B5F0-4AD5-8A39-7FABE6D04B19}</Project>
+      <Name>Infrastructure.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ChkAddrModule.Interface\ChkAddrModule.Interface.csproj">
       <Project>{08038017-0FB1-4DD2-90C7-C08FA936FC6A}</Project>
       <Name>ChkAddrModule.Interface</Name>

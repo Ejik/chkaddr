@@ -10,6 +10,10 @@ using Microsoft.Practices.CompositeUI;
 
 namespace ACOT.Services.WorkersService
 {
+    public class AcotRecord {
+        public const int recordSize = 12600;
+    }
+
     public class WorkersService : IWorkersService
     {
         private readonly WorkersDataSet _workersDataSet;
@@ -42,68 +46,68 @@ namespace ACOT.Services.WorkersService
             using (FileStream fs = new FileStream(adres, FileMode.Open, FileAccess.ReadWrite))
             {
                 fs.Seek(0, SeekOrigin.Begin);
-                byte[] int8600 = new byte[8600];
+                byte[] recordSize = new byte[AcotRecord.recordSize];
 
-                while (fs.Read(int8600, 0, 8600) > 0)
+                while (fs.Read(recordSize, 0, AcotRecord.recordSize) > 0)
                 {
                     WorkersDataSet.WorkersRow row = _workersTable.NewWorkersRow();
-                    int tna = BitConverter.ToInt32(int8600, 0);
+                    int tna = BitConverter.ToInt32(recordSize, 0);
                     if (tna != 0)
                     {
                         row.TBN = tna.ToString("D5");
                         // FIO
                         string buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 4, 44));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 4, 44));
                         row.NAME = buf.Trim();
 
                         // kodstran
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 48, 3));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 48, 3));
                         row.KODSTRAN = buf.Trim();
 
                         // kodreg
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 51, 2));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 51, 2));
                         row.KODREG = buf.Trim();
 
                         // index
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 53, 6));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 53, 6));
                         row.INDEX = buf.Trim();
 
                         // gorod
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 59, 40));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 59, 40));
                         row.GOROD = buf.Trim();
 
                         // n_punkt
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 99, 40));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 99, 40));
                         row.NPUNKT = buf.Trim();
 
                         // raion
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 139, 25));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 139, 25));
                         row.RAION = buf.Trim();
 
                         // ulica
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 164, 40));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 164, 40));
                         row.ULICA = buf.Trim();
 
                         // dom
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 204, 7));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 204, 7));
                         row.DOM = buf.Trim();
 
                         // korp
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 211, 2));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 211, 2));
                         row.KORPUS = buf.Trim();
 
                         // kvart
                         buf = Encoding.UTF8.GetString(
-                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, int8600, 213, 5));
+                            Encoding.Convert(Encoding.GetEncoding(866), Encoding.UTF8, recordSize, 213, 5));
                         row.KVART = buf.Trim();
 
                         _workersTable.AddWorkersRow(row);
@@ -135,35 +139,35 @@ namespace ACOT.Services.WorkersService
             {
                 WorkersDataSet.WorkersRow row = (this.bingingSource.Current as DataRowView).Row as WorkersDataSet.WorkersRow;
                 int shift = row.ID;
-                shift *= 8600;
-                shift -= 8600;
+                shift *= AcotRecord.recordSize;
+                shift -= AcotRecord.recordSize;
                 fs.Seek(shift, SeekOrigin.Begin);
-                byte[] int8600 = new byte[8600];
+                byte[] recordSize = new byte[AcotRecord.recordSize];
 
                 // ТБН
                 byte[] b = BitConverter.GetBytes(Convert.ToInt32(row.TBN));
                 int i = 0;
                 for(i = 0; i < b.Length; i++)
-                    int8600[i] = b[i];
+                    recordSize[i] = b[i];
 
-                AllocateDataInBuffer(row.NAME, 4, 44, int8600);
-                AllocateDataInBuffer(row.KODSTRAN, 48, 3, int8600);
-                AllocateDataInBuffer(row.KODREG, 51, 2, int8600);
-                AllocateDataInBuffer(row.INDEX, 53, 6, int8600);
-                AllocateDataInBuffer(row.GOROD, 59, 40, int8600);
-                AllocateDataInBuffer(row.NPUNKT, 99, 40, int8600);
-                AllocateDataInBuffer(row.RAION, 139, 25, int8600);
-                AllocateDataInBuffer(row.ULICA, 164, 40, int8600);
-                AllocateDataInBuffer(row.DOM, 204, 7, int8600);
-                AllocateDataInBuffer(row.KORPUS, 211, 2, int8600);
-                AllocateDataInBuffer(row.KVART, 213, 5, int8600);
+                AllocateDataInBuffer(row.NAME, 4, 44, recordSize);
+                AllocateDataInBuffer(row.KODSTRAN, 48, 3, recordSize);
+                AllocateDataInBuffer(row.KODREG, 51, 2, recordSize);
+                AllocateDataInBuffer(row.INDEX, 53, 6, recordSize);
+                AllocateDataInBuffer(row.GOROD, 59, 40, recordSize);
+                AllocateDataInBuffer(row.NPUNKT, 99, 40, recordSize);
+                AllocateDataInBuffer(row.RAION, 139, 25, recordSize);
+                AllocateDataInBuffer(row.ULICA, 164, 40, recordSize);
+                AllocateDataInBuffer(row.DOM, 204, 7, recordSize);
+                AllocateDataInBuffer(row.KORPUS, 211, 2, recordSize);
+                AllocateDataInBuffer(row.KVART, 213, 5, recordSize);
 
 
-                fs.Write(int8600, 0, 219);
+                fs.Write(recordSize, 0, 219);
             }
         }
 
-        private void AllocateDataInBuffer(string buf, int idx, int bufLen, byte[] int8600)
+        private void AllocateDataInBuffer(string buf, int idx, int bufLen, byte[] recordSize)
         {
             for (int i = 0; i < bufLen; i++)
             {
@@ -172,10 +176,10 @@ namespace ACOT.Services.WorkersService
                     char[] cArr = buf.ToCharArray(0, buf.Length);
                     byte[] bArr = Encoding.UTF8.GetBytes(cArr);
                     bArr = Encoding.Convert(Encoding.UTF8, Encoding.GetEncoding(866), bArr);
-                    int8600[idx + i] = bArr[i];
+                    recordSize[idx + i] = bArr[i];
                 }
                 else
-                    int8600[idx + i] = (byte)32;
+                    recordSize[idx + i] = (byte)32;
             }
         }
 
